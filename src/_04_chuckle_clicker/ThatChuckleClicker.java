@@ -36,9 +36,7 @@ JFrame f=new JFrame();
 b.addActionListener(this);
 Button.addActionListener(this);
 	
-if (event.getsource) {
-	
-}
+
 	
 	
 	
@@ -48,7 +46,19 @@ if (event.getsource) {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getSource() == Button) {
+			JOptionPane.showMessageDialog(null, "Hey there, dude");
+			JOptionPane.showMessageDialog(null, "People say everything happens for a reason... so when I punch you in the face, remember I have a reason!");
+			
+		}
+			
+		if(e.getSource() == b) {
+			JOptionPane.showMessageDialog(null, "Hey there, dude");
+			JOptionPane.showMessageDialog(null, "What do you call a pig that does Karate?   A PORK CHOP!");
 		
+		}
+	
+	
 	}
 
 

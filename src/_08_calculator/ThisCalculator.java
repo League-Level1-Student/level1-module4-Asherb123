@@ -12,7 +12,8 @@ import javax.swing.JTextField;
 public class ThisCalculator implements MouseListener {
 JFrame frame = new JFrame();
 JPanel panel = new JPanel();
-	JButton a = new JButton("Add");
+JLabel answer=new JLabel("0");
+JButton a = new JButton("Add");
 JButton b = new JButton("Subtract");
 JButton c = new JButton("Multiply");
 JButton d = new JButton("Divide");
@@ -27,7 +28,7 @@ JTextField two = new JTextField(10);
 
 frame.add(panel);
 frame.setName("Calculator");
-JLabel answer=new JLabel("0");
+
 
 
 
@@ -63,26 +64,26 @@ d.addMouseListener(this);
 
 }
 	
-void add() {
-	
-	
-}
-
-void subtract() {
-	
-	
+int add(int firstNum, int secondNum) {
+	return firstNum+secondNum;
 	
 }
 
-void divide() {
+int subtract(int firstNum, int secondNum) {
 	
-	
+	return firstNum-secondNum;
 	
 }
 
-void multiply() {
+int divide(int firstNum, int secondNum) {
 	
+	return firstNum/secondNum;
 	
+}
+
+int multiply(int firstNum, int secondNum) {
+	
+	return firstNum*secondNum;
 	
 }
 
@@ -97,14 +98,24 @@ public void mousePressed(MouseEvent e) {
 	// TODO Auto-generated method stub
 	int firstNum =Integer.parseInt(one.getText());
 	int secondNum = Integer.parseInt(two.getText());
-if (e.getSource()== a) {
+	int result=0;
+	if (e.getSource()== a) {
+
+result = add(firstNum, secondNum);
+
 }	
 
 if (e.getSource()==b) {
+result= subtract(firstNum, secondNum);
 }	
-else if (condition) {
-	
+if (e.getSource()==c) {
+	result= multiply(firstNum, secondNum);
 }
+if (e.getSource()==d) {
+		result = divide(firstNum, secondNum);
+	}
+answer.setText(""+result);
+frame.pack();
 }
 
 @Override

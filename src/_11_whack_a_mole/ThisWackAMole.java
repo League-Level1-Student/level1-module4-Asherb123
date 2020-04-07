@@ -7,6 +7,7 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class ThisWackAMole implements MouseListener {
@@ -18,8 +19,9 @@ public class ThisWackAMole implements MouseListener {
 	void WackMole() {
 		frame.add(panel);
 		makeButtons();
+		panel.add(label);
 		panel.setPreferredSize(new Dimension(450, 200));
-	
+		
 	
 	
 	frame.setVisible(true);
@@ -42,6 +44,22 @@ public class ThisWackAMole implements MouseListener {
 			}
 		}
 	}
+void reset() {
+	frame.remove(panel);
+	mole.removeMouseListener(this);
+	panel = new JPanel();
+	makeButtons();
+	
+	panel.add(label);
+	frame.add(panel);
+
+panel.setPreferredSize(new Dimension(450, 200));
+frame.pack();
+
+}
+	
+		int points=0;
+	JLabel label = new JLabel(""+points);
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -52,12 +70,21 @@ public class ThisWackAMole implements MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
 		if (e.getSource()==mole) {
 			speak("you are a sexy beast");
 		}
 		else {
 			speak("You frigging suck!");
 		}
+	if (e.getSource()==mole) {
+		points=points+1;
+	}
+	else {
+		points=points-1;
+	}
+	label.setText(""+points);
+	reset();
 	}
 
 	@Override

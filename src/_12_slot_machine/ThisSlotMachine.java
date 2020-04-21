@@ -63,7 +63,7 @@ public class ThisSlotMachine implements MouseListener {
 			} else if (a == 2) {
 				three = createLabelImage(hotDog);
 			}
-			a = rand.nextInt(3);
+			
 			if (b == 0) {
 				two = createLabelImage(corona);
 			} else if (b == 1) {
@@ -72,7 +72,7 @@ public class ThisSlotMachine implements MouseListener {
 				two = createLabelImage(hotDog);
 			}
 
-			a = rand.nextInt(3);
+			
 			if (c == 0) {
 				one = createLabelImage(corona);
 			} else if (c == 1) {

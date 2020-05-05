@@ -1,8 +1,10 @@
 package Birthday;
+import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -38,15 +40,18 @@ public class ThisBirthday implements MouseListener {
 
 
 
-String s = "https://www.youtube.com/watch?v=UtmxG9G7gLA&t=2s";
+//String s = "https://www.youtube.com/watch?v=UtmxG9G7gLA&t=2s";
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource()==button) {
 			
+			Song song = new Song("Birthday.mp3");
+			song.play();
 			
-			JOptionPane.showMessageDialog(null, "Happy Birthday my Shard");
-			JOptionPane.showMessageDialog(null, "You be too old");
+			
+			JOptionPane.showMessageDialog(null, "Happy Birthday dad");
+			JOptionPane.showMessageDialog(null, "You are OLD");
 			
 			
 		}
